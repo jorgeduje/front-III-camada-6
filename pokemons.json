@@ -1,0 +1,122 @@
+{
+  "water": [
+    {
+      "id": 1,
+      "name": "Squirtle",
+      "avatar": "https://cdna.artstation.com/p/assets/images/images/036/372/518/large/paz-itzhaki-20210404-024549-02.jpg?1617494908",
+      "powerLevel": 80,
+      "agressive": true
+    },
+    {
+      "id": 2,
+      "name": "Lapras",
+      "avatar": "https://files.cults3d.com/uploaders/13349751/illustration-file/491a5ecf-ae84-43ee-a820-2f4d98db910a/Lapras.png",
+      "powerLevel": 30,
+      "agressive": false
+    },
+    {
+      "id": 3,
+      "name": "Tentacruel",
+      "avatar": "https://files.cults3d.com/uploaders/20771513/illustration-file/6fad67be-fa82-4d56-b094-5c9489b020b1/Tentacruel.gif",
+      "powerLevel": 60,
+      "agressive": true
+    },
+    {
+      "id": 4,
+      "name": "Kingler",
+      "avatar": "https://www.models-resource.com/resources/big_icons/55/54902.png?updated=1665879900",
+      "powerLevel": 40,
+      "agressive": true
+    }
+  ],
+  "fire": [
+    {
+      "id": 1,
+      "name": "Charmander",
+      "avatar": "https://mir-s3-cdn-cf.behance.net/projects/404/8d58b3146693641.Y3JvcCwxMjE2LDk1MSw0NjAsMTIw.png",
+      "powerLevel": 35,
+      "agressive": false
+    },
+    {
+      "id": 2,
+      "name": "Charizard",
+      "avatar": "https://www.pngitem.com/pimgs/m/454-4540452_charizard-pokemon-charizard-hd-png-download.png",
+      "powerLevel": 55,
+      "agressive": true
+    },
+    {
+      "id": 3,
+      "name": "Arcanine",
+      "avatar": "https://www.pngmart.com/files/22/Arcanine-Pokemon-PNG-Pic.png",
+      "powerLevel": 46,
+      "agressive": false
+    },
+    {
+      "id": 4,
+      "name": "Rapidash",
+      "avatar": "https://files.cults3d.com/uploaders/26118801/illustration-file/bf2b9591-7b6d-4635-b366-fb6583e4c5a9/Screenshot-16.png",
+      "powerLevel": 35,
+      "agressive": false
+    }
+  ],
+  "air": [
+    {
+      "id": 1,
+      "name": "Pidgeot",
+      "avatar": "https://files.cults3d.com/uploaders/17560495/illustration-file/470697f7-6681-4151-b480-e11ac9c2099f/pidgeot.jpg",
+      "powerLevel": 35,
+      "agressive": true
+    },
+    {
+      "id": 2,
+      "name": "Scyther",
+      "avatar": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/64f40a0d-3139-4753-92f6-0b6d8ac2778b/d5omp4c-87298994-f0ce-4585-b0bf-ae63668d698f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY0ZjQwYTBkLTMxMzktNDc1My05MmY2LTBiNmQ4YWMyNzc4YlwvZDVvbXA0Yy04NzI5ODk5NC1mMGNlLTQ1ODUtYjBiZi1hZTYzNjY4ZDY5OGYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.eXhuvZ58-SgjBpiySklR8dVe_U2Wr9nmg9r7rt-0SfM",
+      "powerLevel": 42,
+      "agressive": true
+    },
+    {
+      "id": 3,
+      "name": "Yanma",
+      "avatar": "https://images.free3d.com/imgd/l48309-yanma-pokemon-44159.png",
+      "powerLevel": 22,
+      "agressive": false
+    },
+    {
+      "id": 4,
+      "name": "Ho oh",
+      "avatar": "https://static.wikia.nocookie.net/p__/images/2/22/HoOhTrophyWiiU.png/revision/latest?cb=20220202195305&path-prefix=protagonist",
+      "powerLevel": 62,
+      "agressive": true
+    }
+  ],
+  "electric": [
+    {
+      "id": 1,
+      "name": "Pikachu",
+      "avatar": "https://www.pngitem.com/pimgs/m/9-98231_pikachu-3d-png-pokepark-wii-pikachus-adventure-transparent.png",
+      "powerLevel": 42,
+      "agressive": true
+    },
+    {
+      "id": 2,
+      "name": "Voltorb",
+      "avatar": "https://files.cults3d.com/uploaders/5909433/illustration-file/08932cf3-648b-4149-893f-0ac854477225/Capture%20d%E2%80%99e%CC%81cran%202016-12-07%20a%CC%80%2010.13.29.png",
+      "powerLevel": 42,
+      "agressive": true
+    },
+    {
+      "id": 3,
+      "name": "Electivire",
+      "avatar": "https://www.seekpng.com/png/full/990-9902999_electivire-pbh-electivire.png",
+      "powerLevel": 38,
+      "agressive": true
+    },
+    {
+      "id": 4,
+      "name": "Thundurus",
+      "avatar": "https://www.seekpng.com/png/detail/229-2299500_642thundurus-therian-3d-pro-3d-pokemon.png",
+      "powerLevel": 98,
+      "agressive": true
+    }
+  ]
+}
