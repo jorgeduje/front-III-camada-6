@@ -1,20 +1,15 @@
+import "./App.css";
 
-import { Header } from "./Components/Header/Header"
-import './App.css'
-import { Main } from "./Components/Main/Main"
-import Footer from "./Components/Footer/Footer"
-
+import { PokemonList } from "./Components/PokemonList/PokemonList";
 
 function App() {
-  
-
   return (
     <div className="App">
-      <Header />
-      <Main />
-      <Footer />
+      <PokemonList />
+      {/* <Users />
+      <Cart /> */}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
