@@ -1,11 +1,12 @@
 
 import './App.css'
+import Select from './Select/Select'
 
 function App() {
 
   return (
     <div className="App">
-      <h1>App</h1>
+      <Select />
     </div>
   )
 }
