@@ -44,7 +44,7 @@ const Form = () => {
     const emailIsValid = validateUserName(data.email);
     const passwordIsValid = true;
 
-    if ( !emailIsValid && !isPasword) {
+    if ( !emailIsValid || !passwordIsValid) {
         alert("los datos son incorrectos")
         return
     } 
