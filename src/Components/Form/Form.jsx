@@ -4,21 +4,10 @@ import { useState } from "react";
 //onSubmit
 
 const Form = () => {
-
-    console.log( 2 > 1 && 1 && 12 ) // EL ULTIMO TRUE, EL PRIMER FALSE
-
   const [data, setData] = useState({
     email: "",
     password: "",
   });
-
-//   let x = true
-
-//   if( x ){
-//     console.log("es un true")
-//   }else{
-//     console.log("es un false")
-//   }
 
   const [flag, setFlag] = useState(true);
 
@@ -35,7 +24,6 @@ const Form = () => {
     } else {
       return false;
     }
-    
   };
 
   const handleSubmit = (e) => {
@@ -44,21 +32,21 @@ const Form = () => {
     const emailIsValid = validateUserName(data.email);
     const passwordIsValid = true;
 
-    if ( !emailIsValid && !isPasword) {
-        alert("los datos son incorrectos")
-        return
-    } 
+    if (!emailIsValid && !isPasword) {
+      alert("los datos son incorrectos");
+      return;
+    }
 
     // LO ULTIMO
     alert(`su email es : ${data.email} y su contraseña: ${data.password} `);
   };
 
-    const handleKeyDown = (e) => {
-      if (e.key === " ") {
-        e.preventDefault();
-        alert("no se permiten espacion vacios");
-      }
-    };
+  const handleKeyDown = (e) => {
+    if (e.key === " ") {
+      e.preventDefault();
+      alert("no se permiten espacion vacios");
+    }
+  };
 
   return (
     <div>
@@ -81,10 +69,8 @@ const Form = () => {
         // flag  ? <h1>Me muestro siempre</h1> : null
         flag && <h1>Me muestro siempre</h1>
       }
-      
     </div>
   );
 };
 
 export default Form;
-

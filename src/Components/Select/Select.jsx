@@ -19,8 +19,8 @@ const Select = () => {
     };
 
     // pegarle al endpoint de comprar producto
-    console.log( data )
-    alert("gracias por su compra")
+    console.log(data);
+    alert("gracias por su compra");
   };
 
   return (

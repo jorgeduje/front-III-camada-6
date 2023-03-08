@@ -1,9 +1,9 @@
 import "./App.css";
-import ItemsList from "./Components/ItemsList/ItemsList";
-import Form from "./Form/Form";
-import Select from "./Select/Select";
 
 import "./App.css";
+import Form from "./Components/Form/Form";
+import ItemsList from "./Components/ItemsList/ItemsList";
+import Select from "./Components/Select/Select";
 
 function App() {
   return (

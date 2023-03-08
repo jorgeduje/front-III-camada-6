@@ -7,19 +7,15 @@ const ItemsList = () => {
 
   const addToCart = (item) => {
     // cart.push(item) // ESTO NOO
-    
-    const existe = cart.some( (elemento) => elemento.id === item.id ) // 1
 
-    if( !existe ){
-        setCart( [...cart, item] )
-    }else{
-        alert("ya existe en el carrito")
+    const existe = cart.some((elemento) => elemento.id === item.id); // 1
+
+    if (!existe) {
+      setCart([...cart, item]);
+    } else {
+      alert("ya existe en el carrito");
     }
-
   };
-
-  console.log(cart)
-
 
   return (
     <div>
@@ -42,15 +38,14 @@ const ItemsList = () => {
       <h2>{cart.length}</h2>
       {cart.map((element) => {
         return (
-          <div key={element.id} style={{border: "2px solid red"}}>
+          <div key={element.id} style={{ border: "2px solid red" }}>
             <h2>{element.name}</h2>
             <h3>{element.price}</h3>
           </div>
         );
       })}
 
-      <button onClick={()=> setCart([])}>Vaciar carrito</button>
-
+      <button onClick={() => setCart([])}>Vaciar carrito</button>
     </div>
   );
 };
