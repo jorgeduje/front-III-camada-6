@@ -1,6 +1,9 @@
 import "./App.css";
 import ItemsList from "./Components/ItemsList/ItemsList";
 import Form from "./Form/Form";
+import Select from "./Select/Select";
+
+import "./App.css";
 
 function App() {
   return (
@@ -8,6 +11,7 @@ function App() {
       <ItemsList />
 
       <Form />
+      <Select />
     </div>
   );
 }
