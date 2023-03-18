@@ -1,14 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Products = ({
   updateProductById,
   deleteProductById,
-  handleChange,
-  handleSubmit,
   items,
 }) => {
   return (
     <div>
+      <Link to="/create-product">
+        <button>Agregar nuevo producto</button>
+      </Link>
       {items.map((elemento) => (
         <div key={elemento.id} style={{ border: "2px solid white" }}>
           <h2>{elemento.name}</h2>
@@ -25,28 +27,7 @@ const Products = ({
         </div>
       ))}
 
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="nombre del producto"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="price"
-          placeholder="precio del producto"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="img"
-          placeholder="url de la imagen"
-          onChange={handleChange}
-        />
-
-        <button type="submit">Crear</button>
-      </form>
+      
     </div>
   );
 };

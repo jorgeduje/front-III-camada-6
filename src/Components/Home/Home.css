@@ -1,0 +1,13 @@
+.navbar {
+  background-color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  color: black;
+}
+
+.acitveNavbar {
+  background-color: red;
+  padding: 10px 20px;
+  margin: 10px;
+  color: black;
+}
