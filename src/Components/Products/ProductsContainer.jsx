@@ -1,6 +1,9 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Home from "../Home/Home";
+import {
+  deleteProduct,
+  getProducts,
+  updateProduct,
+} from "../../services/productsServices";
 import Products from "./Products";
 
 const ProductsContainer = () => {
@@ -10,23 +13,19 @@ const ProductsContainer = () => {
 
   useEffect(() => {
     setIsChanged(false);
-    const productos = axios.get("http://localhost:5000/products");
+    const productos = getProducts();
     productos
       .then((res) => setItems(res.data))
       .catch((err) => console.log(err));
   }, [isChanged]);
 
   const deleteProductById = (id) => {
-    axios.delete(`http://localhost:5000/products/${id}`);
+    deleteProduct(id);
     setIsChanged(true);
   };
 
   const updateProductById = (id) => {
-    axios.patch(`http://localhost:5000/products/${id}`, {
-      price: 6000,
-      name: "zapas X",
-    });
-
+    updateProduct(id);
     setIsChanged(true);
   };
 
