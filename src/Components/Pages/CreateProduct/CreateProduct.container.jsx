@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CreateProduct from "./CreateProduct";
 
-const CreateProduct = () => {
+const CreateProductContainer = () => {
   const [newProduct, setNewProduct] = useState({
     name: "",
     price: "",
@@ -30,30 +31,9 @@ const CreateProduct = () => {
 
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="nombre del producto"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="price"
-          placeholder="precio del producto"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="img"
-          placeholder="url de la imagen"
-          onChange={handleChange}
-        />
-
-        <button type="submit">Crear</button>
-      </form>
+      <CreateProduct handleSubmit={handleSubmit} handleChange={handleChange} />
     </div>
   );
 };
 
-export default CreateProduct;
+export default CreateProductContainer;
