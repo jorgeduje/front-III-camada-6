@@ -1,20 +1,9 @@
 import React from "react";
+import { Outlet } from "react-router";
+import { NavLink } from "react-router-dom";
 
-import { useNavigate, NavLink } from "react-router-dom";
 
-import "./Home.css";
-
-const Home = () => {
-  const navigate = useNavigate();
-
-  const login = () => {
-    // todo lo que tenga que hacer
-    console.log("ya termine el proceso");
-    navigate("/shop");
-  };
-  //   className={({ isActive, isPending }) =>
-  //   isPending ? "pending" : isActive ? "active" : ""
-  // }
+const NavbarLayout = () => {
   return (
     <div>
       <NavLink
@@ -37,12 +26,9 @@ const Home = () => {
       >
         Carrito
       </NavLink>
-
-      <h1>Bienvid@</h1>
-
-      <button onClick={login}>Ingresar</button>
+      <Outlet />
     </div>
   );
 };
 
-export default Home;
+export default NavbarLayout;

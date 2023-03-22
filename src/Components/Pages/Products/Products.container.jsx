@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Home from "../Home/Home";
+
 import Products from "./Products";
 
 const ProductsContainer = () => {
