@@ -1,9 +1,7 @@
 import React from "react";
-import { Outlet } from "react-router";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
-
-const NavbarLayout = () => {
+const NavbarLayout = (  ) => {
   return (
     <div>
       <NavLink
