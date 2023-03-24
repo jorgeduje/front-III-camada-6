@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "../../Common/ProductCard/ProductCard";
 
-const Products = ({ updateProductById, deleteProductById, items }) => {
+const Products = ({  deleteProductById, items }) => {
   return (
     <div>
       <Link to="/create-product">
@@ -12,7 +12,7 @@ const Products = ({ updateProductById, deleteProductById, items }) => {
         <ProductCard
           key={elemento.id}
           elemento={elemento}
-          updateProductById={updateProductById}
+         
           deleteProductById={deleteProductById}
         />
       ))}

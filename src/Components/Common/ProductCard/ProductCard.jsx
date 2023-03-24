@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ elemento, deleteProductById, updateProductById }) => {
+const ProductCard = ({ elemento, deleteProductById }) => {
   return (
     <div style={{ border: "2px solid white" }}>
       <h2>{elemento.name}</h2>
@@ -14,7 +14,7 @@ const ProductCard = ({ elemento, deleteProductById, updateProductById }) => {
       <button onClick={() => deleteProductById(elemento.id)}>
         Eliminar producto
       </button>
-      <button onClick={() => updateProductById(elemento.id)}>Editar</button>
+      
       <Link to={`/productDetail/${elemento.id}`}>
         <button>Ver Detalle</button>
       </Link>
