@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
 
 const NavbarLayout = (  ) => {
+
+  const {cart} = useContext(CartContext)
+  
   return (
     <div>
       <NavLink
@@ -24,6 +28,7 @@ const NavbarLayout = (  ) => {
       >
         Carrito
       </NavLink>
+      <h3>Carrito: {cart.length}</h3>
       <Outlet />
     </div>
   );
