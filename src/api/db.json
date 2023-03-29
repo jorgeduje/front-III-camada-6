@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "name": "nike 360",
+      "name": "zapatillas",
       "price": 20500,
       "stock": 2,
       "description": "Zapatillas de ultima generacion para el deporte",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "name": "wilson advance",
+      "name": "wilson advanceeeeeee",
       "price": 14500,
       "stock": 7,
       "description": "Ultra livianas y cuentan con camara de aire",

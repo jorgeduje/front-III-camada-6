@@ -1,30 +1,45 @@
-import React, { useEffect, useState } from 'react'
-import ProductDetail from './ProductDetail'
-import { useParams } from "react-router-dom"
-import axios from 'axios'
-import { updateProduct } from '../../../services/productServices'
+import React, { useEffect, useState } from "react";
+import ProductDetail from "./ProductDetail";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { getProductById, updateProduct } from "../../../services/productServices";
 
 const ProductDetailContainer = () => {
+  const [product, setProduct] = useState({});
+  const [showForm, setShowForm] = useState(false);
 
-  const [product, setProduct] = useState({})
+  const [productSelected, setProductSelected] = useState({
+    name: product.name,
+  });
 
-  const {id} = useParams()
-  
+  const [isUpdated, setIsUpdated] = useState(false);
 
-  useEffect(()=>{
-    axios.get(`http://localhost:5000/products/${id}`)
-      .then (res => setProduct(res.data))
-  }, [])
+  const { id } = useParams();
 
-  const updateProductById = ()=>{
-    updateProduct(id, {price: 6000, name: "zapas X",})
-  }
-    
+  useEffect(() => {
+    setIsUpdated(false);
+    let producto = getProductById(id);
+    producto.then((res) => setProduct(res.data));
+  }, [isUpdated]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    updateProduct(id, productSelected);
+    setIsUpdated(true);
+  };
+
   return (
     <div>
-        <ProductDetail updateProductById={updateProductById} product={product} />
+      <ProductDetail
+        product={product}
+        showForm={showForm}
+        setShowForm={setShowForm}
+        handleSubmit={handleSubmit}
+        productSelected={productSelected}
+        setProductSelected={setProductSelected}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default ProductDetailContainer
+export default ProductDetailContainer;
