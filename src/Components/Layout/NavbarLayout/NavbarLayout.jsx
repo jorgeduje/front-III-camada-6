@@ -1,34 +1,54 @@
 import React, { useContext } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+import "./NavbarLayout.css";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Button } from "@mui/material";
+const NavbarLayout = () => {
+  const { cart } = useContext(CartContext);
+  const navigate = useNavigate();
 
-const NavbarLayout = (  ) => {
-
-  const {cart} = useContext(CartContext)
-  
   return (
     <div>
-      <NavLink
-        to="/login"
-        className={({ isActive }) => (isActive ? "acitveNavbar" : "navbar")}
-      >
-        login
-      </NavLink>
+      <div className="container-navbar">
+        <h3>Logo</h3>
+        <div className="container-items">
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive ? "navbar-items-active" : "navbar-items"
+            }
+          >
+            login
+          </NavLink>
 
-      <NavLink
-        to="/shop"
-        className={({ isActive }) => (isActive ? "acitveNavbar" : "navbar")}
-      >
-        Tienda
-      </NavLink>
+          <NavLink
+            to="/shop"
+            className={({ isActive }) =>
+              isActive ? "navbar-items-active" : "navbar-items"
+            }
+          >
+            Tienda
+          </NavLink>
 
-      <NavLink
-        to="/cart"
-        className={({ isActive }) => (isActive ? "acitveNavbar" : "navbar")}
-      >
-        Carrito
-      </NavLink>
-      <h3>Carrito: {cart.length}</h3>
+          {/* <NavLink
+            to="/cart"
+            className={({ isActive }) => (isActive ? "navbar-items-active" : "navbar-items")}
+          >
+            Carrito
+          </NavLink> */}
+        </div>
+
+        <Link to="/cart">
+          <div className="container-cart">
+            <ShoppingCartIcon sx={{ fontSize: "40px" }} />
+
+            <div className="bubble-counter">
+              <span>{cart.length}</span>
+            </div>
+          </div>
+        </Link>
+      </div>
       <Outlet />
     </div>
   );

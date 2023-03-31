@@ -27,7 +27,7 @@ const ProductsContainer = () => {
   };
 
   return (
-    <div>
+    <div style={{backgroundColor: "black", minHeight: "90vh"}}>
       <Products
        
         deleteProductById={deleteProductById}

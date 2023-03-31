@@ -1,0 +1,52 @@
+.container-navbar{
+    width: 100%;
+    background-color: steelblue;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+.container-items{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-items{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid black;
+    
+    text-align: center;
+}
+.navbar-items-active{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid black;
+    
+    text-align: center;
+}
+
+.container-cart{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: black;
+}
+.bubble-counter{
+    width: 30px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: -50%;
+    right: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

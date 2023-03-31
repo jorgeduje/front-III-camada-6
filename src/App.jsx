@@ -1,9 +1,7 @@
-import "./App.css";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import NavbarLayout from "./Components/Layout/NavbarLayout/NavbarLayout";
-import FooterLayout from "./Components/Layout/FooterLayout/FooterLayout";
 import Home from "./Components/Pages/Home/Home";
 import ProductsContainer from "./Components/Pages/Products/Products.container";
 import CreateProductContainer from "./Components/Pages/CreateProduct/CreateProduct.container";
