@@ -6,13 +6,13 @@ import Home from "./Components/Pages/Home/Home";
 import ProductsContainer from "./Components/Pages/Products/Products.container";
 import CreateProductContainer from "./Components/Pages/CreateProduct/CreateProduct.container";
 import ProductDetailContainer from "./Components/Pages/ProductDetail/ProductDetail.container";
-import CartContextProvider from "./context/CartContext";
 import CartContainer from "./Components/Pages/Cart/CartContainer";
+import CartContextReducerProvider from "./context/CartContextReducer";
 
 function App() {
   return (
     <BrowserRouter>
-      <CartContextProvider>
+      <CartContextReducerProvider>
         <Routes>
           <Route path="/login" element={<h1>Estoy en la vista Login</h1>} />
 
@@ -33,7 +33,7 @@ function App() {
 
           <Route path="*" element={<h1>Not found</h1>} />
         </Routes>
-      </CartContextProvider>
+      </CartContextReducerProvider>
     </BrowserRouter>
   );
 }

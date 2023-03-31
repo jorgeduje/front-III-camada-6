@@ -1,12 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
-import { CartContext } from "../../../context/CartContext";
 import "./NavbarLayout.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Button } from "@mui/material";
+import { CartContexReducer } from "../../../context/CartContextReducer";
 const NavbarLayout = () => {
-  const { cart } = useContext(CartContext);
-  const navigate = useNavigate();
+  const { state, dispatch } = useContext(CartContexReducer);
+
+  useEffect(() => {
+    dispatch({ type: "GET_TOTAL_QUANTITY" });
+  }, [state.cart]);
 
   return (
     <div>
@@ -30,13 +32,6 @@ const NavbarLayout = () => {
           >
             Tienda
           </NavLink>
-
-          {/* <NavLink
-            to="/cart"
-            className={({ isActive }) => (isActive ? "navbar-items-active" : "navbar-items")}
-          >
-            Carrito
-          </NavLink> */}
         </div>
 
         <Link to="/cart">
@@ -44,7 +39,7 @@ const NavbarLayout = () => {
             <ShoppingCartIcon sx={{ fontSize: "40px" }} />
 
             <div className="bubble-counter">
-              <span>{cart.length}</span>
+              <span>{state.totalQuantity}</span>
             </div>
           </div>
         </Link>
