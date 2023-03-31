@@ -1,10 +1,19 @@
-import { width } from "@mui/system";
-import { useContext } from "react";
-import { CartContext } from "../../../context/CartContext";
+import { useContext, useEffect } from "react";
 import { Button, Typography } from "@mui/material";
+import { CartContexReducer } from "../../../context/CartContextReducer";
 
 const CartContainer = () => {
-  const { cart, clearCart, getTotalPrice } = useContext(CartContext);
+  const { state, dispatch } = useContext(CartContexReducer);
+
+
+
+  console.log(state.cart)
+
+  useEffect(()=>{
+    dispatch({type:"GET_TOTAL_PRICE"})
+  },[])
+
+
 
   return (
     <div
@@ -17,7 +26,7 @@ const CartContainer = () => {
         gap: "50px",
       }}
     >
-      <div
+      {/* <div
         style={{
           width: "60%",
           height: "100vh",
@@ -49,7 +58,7 @@ const CartContainer = () => {
             <Button variant="contained">Eliminar</Button>
           </div>
         ))}
-      </div>
+      </div> */}
 
       <div
         style={{
@@ -62,13 +71,15 @@ const CartContainer = () => {
         }}
       >
         <Typography variant="h5">
-          El total del carrito es: {getTotalPrice()}
+          El total del carrito es: {state.totalPrice}
         </Typography>
        <div>
        <Button variant="contained">
           Finalizar compra
         </Button>
-        <Button variant="contained" onClick={clearCart}>
+        <Button variant="contained" 
+        onClick={()=>dispatch({type:"CLEAR_CART"})}
+        >
           Limpiar carrito
         </Button>
        </div>

@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import { CartContext } from "../../../context/CartContext";
 import { Button } from "@mui/material";
 import "./ItemCount.css"
+import { CartContexReducer } from "../../../context/CartContextReducer";
 
 export const ItemCount = ({ product }) => {
   const [counter, setCounter] = useState(1);
-  const { addToCart } = useContext(CartContext);
+  const { dispatch } = useContext(CartContexReducer);
 
   const onAdd = () => {
     let obj = {
@@ -13,7 +13,8 @@ export const ItemCount = ({ product }) => {
       quantity: counter,
     };
 
-    addToCart(obj);
+    dispatch({type: "ADD_TO_CART", payload: obj})
+    // addToCart(obj);
   };
 
   return (
