@@ -1,15 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "zapatillas",
-      "price": 20500,
-      "stock": 2,
-      "description": "Zapatillas de ultima generacion para el deporte",
-      "category": "deportivas",
-      "img": "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669326932/free-metcon-4-zapatillas-de-entrenamiento-TQMCZg_fvia3m.png"
-    },
-    {
       "id": 2,
       "name": "wilson advanceeeeeee",
       "price": 14500,
