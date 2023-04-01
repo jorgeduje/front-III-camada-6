@@ -42,6 +42,9 @@ function cartReducer(state, action) {
       }, 0)
       console.log(total2)
       return {...state, totalQuantity: total2 }
+      case "DELETE_BY_ID":
+        let arrFiltrado = state.cart.filter( elemento => elemento.id !== action.payload )
+        return {...state, cart: arrFiltrado}
     default:
       return state;
   }
@@ -58,3 +61,10 @@ const CartContextReducerProvider = ({ children }) => {
 };
 
 export default CartContextReducerProvider;
+
+// 2
+// a: [ {id:1}, {id:2}, {id:3} ]
+// b = a.filter( elementos => elementos.id !== id ) --> [{}, {}]
+// a = b
+// set a([])
+

@@ -8,6 +8,7 @@ import CreateProductContainer from "./Components/Pages/CreateProduct/CreateProdu
 import ProductDetailContainer from "./Components/Pages/ProductDetail/ProductDetail.container";
 import CartContainer from "./Components/Pages/Cart/CartContainer";
 import CartContextReducerProvider from "./context/CartContextReducer";
+import NavbarMaterial from "./Components/Layout/NavbarMaterial/NavbarMaterial";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<h1>Estoy en la vista Login</h1>} />
 
-          <Route element={<NavbarLayout />}>
+          <Route element={<NavbarMaterial />}>
             <Route path="/" element={<Home />} />
 
             <Route path="/cart" element={<CartContainer />} />
