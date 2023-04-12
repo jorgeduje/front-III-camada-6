@@ -9,6 +9,7 @@ import ProductDetailContainer from "./Components/Pages/ProductDetail/ProductDeta
 import CartContainer from "./Components/Pages/Cart/CartContainer";
 import CartContextReducerProvider from "./context/CartContextReducer";
 import NavbarMaterial from "./Components/Layout/NavbarMaterial/NavbarMaterial";
+import CheckOut from "./Components/Pages/CheckOut/CheckOut";
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
             <Route
               path="/productDetail/:id"
               element={<ProductDetailContainer />}
+            />
+            <Route
+              path="/checkout"
+              element={<CheckOut />}
             />
           </Route>
 
