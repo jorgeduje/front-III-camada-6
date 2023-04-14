@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import NavbarLayout from "./Components/Layout/NavbarLayout/NavbarLayout";
@@ -15,10 +14,9 @@ function App() {
   return (
     <BrowserRouter>
       <CartContextReducerProvider>
-        <Routes>
-          <Route path="/login" element={<h1>Estoy en la vista Login</h1>} />
-
-          <NavbarMaterial>
+        <NavbarMaterial>
+          <Routes>
+            <Route path="/login" element={<h1>Estoy en la vista Login</h1>} />
 
             <Route path="/" element={<Home />} />
 
@@ -27,19 +25,16 @@ function App() {
             <Route
               path="/create-product"
               element={<CreateProductContainer />}
-              />
+            />
             <Route
               path="/productDetail/:id"
               element={<ProductDetailContainer />}
-              />
-            <Route
-              path="/checkout"
-              element={<CheckOut />}
-              />
-              </NavbarMaterial>
+            />
+            <Route path="/checkout" element={<CheckOut />} />
 
-          <Route path="*" element={<h1>Not found</h1>} />
-        </Routes>
+            <Route path="*" element={<h1>Not found</h1>} />
+          </Routes>
+        </NavbarMaterial>
       </CartContextReducerProvider>
     </BrowserRouter>
   );
