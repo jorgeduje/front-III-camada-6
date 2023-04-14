@@ -12,7 +12,7 @@ import CheckOut from "./Components/Pages/CheckOut/CheckOut";
 
 function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <CartContextReducerProvider>
         {/* <NavbarMaterial> */}
         <Routes>
@@ -38,7 +38,7 @@ function App() {
         </Routes>
         {/* </NavbarMaterial> */}
       </CartContextReducerProvider>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
