@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
 import NavbarLayout from "./Components/Layout/NavbarLayout/NavbarLayout";
 import Home from "./Components/Pages/Home/Home";
@@ -13,7 +13,7 @@ import CheckOut from "./Components/Pages/CheckOut/CheckOut";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <CartContextReducerProvider>
         <Routes>
           <Route path="/login" element={<h1>Estoy en la vista Login</h1>} />
@@ -40,7 +40,7 @@ function App() {
           <Route path="*" element={<h1>Not found</h1>} />
         </Routes>
       </CartContextReducerProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
