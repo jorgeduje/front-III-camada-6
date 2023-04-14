@@ -18,7 +18,8 @@ function App() {
         <Routes>
           <Route path="/login" element={<h1>Estoy en la vista Login</h1>} />
 
-          <Route element={<NavbarMaterial />}>
+          <NavbarMaterial>
+
             <Route path="/" element={<Home />} />
 
             <Route path="/cart" element={<CartContainer />} />
@@ -26,16 +27,16 @@ function App() {
             <Route
               path="/create-product"
               element={<CreateProductContainer />}
-            />
+              />
             <Route
               path="/productDetail/:id"
               element={<ProductDetailContainer />}
-            />
+              />
             <Route
               path="/checkout"
               element={<CheckOut />}
-            />
-          </Route>
+              />
+              </NavbarMaterial>
 
           <Route path="*" element={<h1>Not found</h1>} />
         </Routes>
