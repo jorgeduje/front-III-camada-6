@@ -48,7 +48,7 @@ const NavbarMaterial = (props) => {
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
-            <ListItemText primary={"Inicio"} sx={{ color: "black" }} />
+            <ListItemText primary={"Homeee"} sx={{ color: "black" }} />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
