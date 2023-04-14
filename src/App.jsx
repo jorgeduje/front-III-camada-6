@@ -14,8 +14,9 @@ function App() {
   return (
     <BrowserRouter>
       <CartContextReducerProvider>
-        <NavbarMaterial>
-          <Routes>
+        {/* <NavbarMaterial> */}
+        <Routes>
+          <Route element={<NavbarMaterial/>}>
             <Route path="/login" element={<h1>Estoy en la vista Login</h1>} />
 
             <Route path="/" element={<Home />} />
@@ -33,8 +34,9 @@ function App() {
             <Route path="/checkout" element={<CheckOut />} />
 
             <Route path="*" element={<h1>Not found</h1>} />
-          </Routes>
-        </NavbarMaterial>
+          </Route>
+        </Routes>
+        {/* </NavbarMaterial> */}
       </CartContextReducerProvider>
     </BrowserRouter>
   );
