@@ -14,9 +14,9 @@ function App() {
   return (
     <HashRouter>
       <CartContextReducerProvider>
-        <NavbarMaterial>
+        {/* <NavbarMaterial> */}
         <Routes>
-          {/* <Route element={<NavbarMaterial/>}> */}
+          <Route element={<NavbarMaterial/>}>
 
             <Route path="/" element={<Home />} />
 
@@ -34,9 +34,9 @@ function App() {
             <Route path="/checkout" element={<CheckOut />} />
 
             <Route path="*" element={<h1>Not found</h1>} />
-          {/* </Route> */}
+          </Route>
         </Routes>
-        </NavbarMaterial>
+        {/* </NavbarMaterial> */}
       </CartContextReducerProvider>
     </HashRouter>
   );
