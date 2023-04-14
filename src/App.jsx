@@ -14,10 +14,9 @@ function App() {
   return (
     <BrowserRouter>
       <CartContextReducerProvider>
-        {/* <NavbarMaterial> */}
+        <NavbarMaterial>
         <Routes>
-          <Route element={<NavbarMaterial/>}>
-            <Route path="/login" element={<h1>Estoy en la vista Login</h1>} />
+          {/* <Route element={<NavbarMaterial/>}> */}
 
             <Route path="/" element={<Home />} />
 
@@ -31,12 +30,13 @@ function App() {
               path="/productDetail/:id"
               element={<ProductDetailContainer />}
             />
+            <Route path="/login" element={<h1>Estoy en la vista Login</h1>} />
             <Route path="/checkout" element={<CheckOut />} />
 
             <Route path="*" element={<h1>Not found</h1>} />
-          </Route>
+          {/* </Route> */}
         </Routes>
-        {/* </NavbarMaterial> */}
+        </NavbarMaterial>
       </CartContextReducerProvider>
     </BrowserRouter>
   );
