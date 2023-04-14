@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 
 import NavbarLayout from "./Components/Layout/NavbarLayout/NavbarLayout";
 import Home from "./Components/Pages/Home/Home";
@@ -12,9 +12,11 @@ import CheckOut from "./Components/Pages/CheckOut/CheckOut";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <CartContextReducerProvider>
+        <NavbarMaterial>
         <Routes>
+          {/* <Route element={<NavbarMaterial/>}> */}
 
             <Route path="/" element={<Home />} />
 
@@ -32,9 +34,11 @@ function App() {
             <Route path="/checkout" element={<CheckOut />} />
 
             <Route path="*" element={<h1>Not found</h1>} />
+          {/* </Route> */}
         </Routes>
+        </NavbarMaterial>
       </CartContextReducerProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
