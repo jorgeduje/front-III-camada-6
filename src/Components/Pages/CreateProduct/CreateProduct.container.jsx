@@ -1,29 +1,47 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createProduct } from "../../../services/productServices";
 import CreateProduct from "./CreateProduct";
+
+import { createProduct } from "../../../services/productServices";
 
 const CreateProductContainer = () => {
   const [newProduct, setNewProduct] = useState({
     name: "",
-    price: "",
+    price: 0,
     img: "",
+    category: "",
+    description: "",
+    stock: 0,
   });
+
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let data = {
+    let dataProduct = {
       name: newProduct.name,
       price: Number(newProduct.price),
       img: newProduct.img,
+      category: newProduct.category,
+      description: newProduct.description,
+      stock: Number(newProduct.stock),
+
+      // OTRA OPCION
+      // ...newProduct,
+      // price: Number(newProduct.price),
+      // stock: Number(newProduct.stock)
     };
 
-    const create = createProduct(data)
-    create.then((res) => console.log(res)).catch((err) => console.log(err));
+    // METODO CREAR EN FIREBASE
+
+    createProduct(dataProduct)
+      .then((res) => console.log(res.id))
+      .catch((err) => setErrorMessage(err?.message));
+
     navigate("/shop");
   };
 

@@ -1,35 +1,46 @@
 import React, { useEffect, useState, useContext } from "react";
 import ProductDetail from "./ProductDetail";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import { getProductById, updateProduct } from "../../../services/productServices";
-import { CartContext } from "../../../context/CartContext";
+
+
+
+// FIREBASE
+
+import { getDoc, collection, doc, updateDoc } from "firebase/firestore";
+import { db } from "../../../firebaseConfig";
 
 const ProductDetailContainer = () => {
   const [product, setProduct] = useState({});
   const [showForm, setShowForm] = useState(false);
 
-  // ANCHOR ---> CONTEXTO 
-
-
-  const [productSelected, setProductSelected] = useState({
-    name: product.name,
-  });
-
-  const [isUpdated, setIsUpdated] = useState(false);
+  console.log(product)
 
   const { id } = useParams();
 
+  let refColecction = collection(db, "products");
+
+  let refDoc = doc(refColecction, id);
   useEffect(() => {
-    setIsUpdated(false);
-    let producto = getProductById(id);
-    producto.then((res) => setProduct(res.data));
-  }, [isUpdated]);
+
+    getDoc(refDoc).then((res) => {
+      setProduct({
+        ...res.data(),
+        id: res.id,
+      });
+    });
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateProduct(id, productSelected);
-    setIsUpdated(true);
+
+    let dataUpdate = {
+      ...product,
+      price: Number(product.price),
+      stock: Number(product.stock)
+    }
+    
+    updateDoc( refDoc, dataUpdate )
+
   };
 
   return (
@@ -39,8 +50,7 @@ const ProductDetailContainer = () => {
         showForm={showForm}
         setShowForm={setShowForm}
         handleSubmit={handleSubmit}
-        productSelected={productSelected}
-        setProductSelected={setProductSelected}
+        setProduct={setProduct}
       />
     </div>
   );

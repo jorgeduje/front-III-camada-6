@@ -151,7 +151,6 @@ const NavbarMaterial = (props) => {
         }}
       >
         <Toolbar />
-        {/* {props.children} */}
         <Outlet />
       </Box>
     </Box>
