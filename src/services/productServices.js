@@ -1,6 +1,9 @@
 
 
+import { db } from "../firebaseConfig";
+
 import { productInstance } from "./productInstance"
+import { addDoc, collection } from "firebase/firestore";
 
 export const getProducts = ()=>{
     let productos = productInstance.get()
@@ -20,5 +23,7 @@ export const updateProduct = (id, data)=>{
 }
 
 export const createProduct = (data)=>{
-    return productInstance.post( "/", data);
+    let refCollection = collection(db, "products");
+    let res =  addDoc(refCollection, data)
+      return res
 }
