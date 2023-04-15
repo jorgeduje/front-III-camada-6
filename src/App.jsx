@@ -12,10 +12,31 @@ import CheckOut from "./Components/Pages/CheckOut/CheckOut";
 
 function App() {
   return (
-    
-       <BrowserRouter>
-       </BrowserRouter>
-      
+    <BrowserRouter>
+      <CartContextReducerProvider>
+        <Routes>
+          <Route path="/login" element={<h1>Estoy en la vista Login</h1>} />
+
+          <Route element={<NavbarMaterial />}>
+            <Route path="/" element={<Home />} />
+
+            <Route path="/cart" element={<CartContainer />} />
+            <Route path="/shop" element={<ProductsContainer />} />
+            <Route
+              path="/create-product"
+              element={<CreateProductContainer />}
+            />
+            <Route
+              path="/productDetail/:id"
+              element={<ProductDetailContainer />}
+            />
+            <Route path="/checkout" element={<CheckOut />} />
+          </Route>
+
+          <Route path="*" element={<h1>Not found</h1>} />
+        </Routes>
+      </CartContextReducerProvider>
+    </BrowserRouter>
   );
 }
 
